@@ -1,6 +1,15 @@
 @import "../../../assets/style/style.scss";
-.bg {
+.bg1{
    background-image: url("../../../assets/media/painting.jpeg");
+
+}
+.bg2{
+   background-image: url("../../../assets//media/painting2.jpeg");
+}
+.bg3{
+   background-image: url("../../../assets//media/staryNight.png");
+}
+.bg {
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;
@@ -27,3 +36,9 @@
       }
    }
 }
+.slick-prev {
+   display: none !important;
+ }
+ .slick-next {
+   display: none !important;
+ }

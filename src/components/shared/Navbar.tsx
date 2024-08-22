@@ -7,15 +7,15 @@ import MobileNav from "./MobileNav";
 import CartSheet from "./CartSheet";
 import AnimatedReveal from "./AnimationComponent";
 import FavoriteButton from "./FavoriteButton";
-
+ 
 const Navbar = () => {
    return (
       <header className="fixed top-0 z-50 w-full border-b bg-background/60 backdrop-blur">
          <AnimatedReveal distance={0} delay={0.3} blur="6px">
             <div className="container flex h-16 items-center justify-between">
                {/* logo */}
-               <Link to="/" className="font-serif text-xl font-bold md:text-3xl">
-                  Young Artist Hub
+               <Link to="/" className="text-xl font-bold md:text-3xl">
+                  <h1>Young Artist Hub</h1>
                </Link>
 
                {/* navitems */}
@@ -54,10 +54,10 @@ const Navbar = () => {
                   {/* auth button */}
                   <div className="mr-2 hidden gap-2 md:flex">
                      <Button asChild>
-                        <Link to="/login">Login</Link>
+                        <Link to="/login">Qeydiyyat</Link>
                      </Button>
                      <Button asChild variant="outline" className="bg-transparent">
-                        <Link to="/register">Register</Link>
+                        <Link to="/register">Daxil ol</Link>
                      </Button>
                   </div>
 

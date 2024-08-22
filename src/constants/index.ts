@@ -1,14 +1,14 @@
 export const navlinks = [
    {
-      name: "Home",
+      name: "Ana səhifə",
       path: "/",
    },
    {
-      name: "About",
+      name: "Haqqımızda",
       path: "/about",
    },
    {
-      name: "Contact",
+      name: "Əlaqə",
       path: "/contact",
    },
    {
