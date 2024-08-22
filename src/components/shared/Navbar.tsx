@@ -15,7 +15,7 @@ const Navbar = () => {
             <div className="container flex h-16 items-center justify-between">
                {/* logo */}
                <Link to="/" className="text-xl font-bold md:text-3xl">
-                  <h1>Young Artist Hub</h1>
+                  <h1>Young Artists Hub</h1>
                </Link>
 
                {/* navitems */}

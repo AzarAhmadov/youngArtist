@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaTelegramPlane, FaYoutube } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
    return (
@@ -12,16 +13,16 @@ const Footer = () => {
                <div>
                   <h5 className="pb-5">Digər linklər</h5>
                   <ul>
-                     <li className="pb-3">Ana səhifə</li>
-                     <li className="pb-3">Haqqımızda</li>
-                     <li className="pb-3">Əlaqə</li>
+                     <li className="pb-3"><Link to={'/'}>Ana səhifə</Link></li>
+                     <li className="pb-3"><Link to={'/about'}>Haqqımızda</Link></li>
+                     <li className="pb-3"><Link to={'/contact'}>Əlaqə</Link></li>
                   </ul>
                </div>
                <div>
                   <h5 className="pb-5">Bizimlə əlaqə</h5>
                   <ul>
-                     <li className="pb-3">+(994)709985865</li>
-                     <li className="pb-3">theyoungh@gmail.com</li>
+                     <li className="pb-3"><a href="tel:+(994)70-998-58-65">+(994)709985865</a></li>
+                     <li className="pb-3"><a href="mailto:theyoungh@gmail.com">theyoungh@gmail.com</a></li>
                   </ul>
                </div>
                <div>
