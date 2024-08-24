@@ -85,6 +85,7 @@ const router: Router = createBrowserRouter([
                </Suspense>
             ),
          },
+         
       ],
    },
    // Auth layout
