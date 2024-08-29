@@ -2,7 +2,7 @@ import { StarFilledIcon } from "@radix-ui/react-icons";
 import { ArrowLeft, Star } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { products as apiProducts } from "@/constants";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Product } from "@/type";
 import { Button, buttonVariants } from "@/components/ui/button";
 import AnimatedLayout from "@/components/shared/AnimatedLayout";
@@ -15,7 +15,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Title } from "@/components/ui/title";
 import SlideDetail from "@/components/shared/slide/SlideDetail";
 
-const ProductDetailPage = () => {
+const ProductDetailPage: React.FC = () => {
    const [products] = useState<Product[]>(apiProducts);
    const [product, setProduct] = useState<Product>();
    const { add } = useCart();
@@ -77,7 +77,7 @@ const ProductDetailPage = () => {
          </Link>
          <div className="grid grid-cols-1 gap-[50px] md:grid-cols-2">
             <AnimatedReveal delay={0.4} blur="6px">
-               <div className="bg-productBackground rounded-none p-[30px] shadow-md">
+               <div className="rounded-none bg-productBackground p-[30px] shadow-md">
                   <img
                      alt={product?.imageAlt}
                      className="object-cover object-center w-full rounded-none aspect-square"
@@ -87,17 +87,17 @@ const ProductDetailPage = () => {
             </AnimatedReveal>
             <div>
                <AnimatedReveal delay={0.6} blur="6px">
-                  <h4 className="title-font text-textTitle mb-1 text-[24px] font-medium">{product?.name}</h4>
+                  <h4 className="title-font mb-1 text-[24px] font-medium text-textTitle">{product?.name}</h4>
                </AnimatedReveal>
                <AnimatedReveal delay={0.6} blur="6px">
-                  <Link to={`/author/${product?.authorSlug}`} className="text-textTitle text-[12px] font-[500]">
+                  <Link to={`/author/${product?.authorSlug}`} className="text-[12px] font-[500] text-textTitle">
                      {product?.author}
                   </Link>
                </AnimatedReveal>
                <AnimatedReveal delay={0.6} blur="6px">
-                  <p className="text-textTitle mb-3 mt-7 text-[18px] font-medium">Ölçü:</p>
-                  <p className="text-textTitle mb-3 text-[18px] font-medium">35.6 x 53.3</p>
-                  <p className="text-textTitle mb-3 mt-[24px] text-[18px] font-medium">
+                  <p className="mb-3 mt-7 text-[18px] font-medium text-textTitle">Ölçü:</p>
+                  <p className="mb-3 text-[18px] font-medium text-textTitle">35.6 x 53.3</p>
+                  <p className="mb-3 mt-[24px] text-[18px] font-medium text-textTitle">
                      {product?.price}
                      <span className="ms-1">AZN</span>
                   </p>
@@ -136,8 +136,8 @@ const ProductDetailPage = () => {
                   </div>
                </AnimatedReveal>
                <AnimatedReveal delay={1} blur="6px">
-                  <h3 className="text-textTitle mb-6 text-[18px]">Rəsm haqda məlumat:</h3>
-                  <ul className="text-textTitle list-disc space-y-4 text-[14px]">
+                  <h3 className="mb-6 text-[18px] text-textTitle">Rəsm haqda məlumat:</h3>
+                  <ul className="list-disc space-y-4 text-[14px] text-textTitle">
                      <li>
                         Ümumi Görünüş: Şəkil qadının profildən çəkilmişdir, yəni üzün yalnız bir tərəfi görünür. Şəkil
                         sadə və minimalistik bir fon üzərində çəkilmişdir, bu da qadının simasını ön plana çıxarır.
