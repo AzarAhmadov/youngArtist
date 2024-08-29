@@ -30,9 +30,9 @@ const Register = () => {
    };
    return (
       <AnimatedLayout>
-         <div className="mx-auto flex min-h-dvh max-w-sm flex-col justify-center">
-            <Card>
-               <CardHeader>
+         <div className="flex flex-col justify-center max-w-sm mx-auto min-h-dvh">
+            <Card className="p-5">
+               <CardHeader className="mb-3">
                   <CardTitle className="text-2xl">Register page</CardTitle>
                </CardHeader>
                <CardContent>
@@ -83,7 +83,7 @@ const Register = () => {
                         </Button>
                      </form>
                   </Form>
-                  <div className="mt-3 text-center text-sm">
+                  <div className="mt-3 text-sm text-center">
                      Don&apos;t have an account?{" "}
                      <Link to="/login" className="underline">
                         Sign in

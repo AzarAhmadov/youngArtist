@@ -1,35 +1,52 @@
-import { Button } from "@/components/ui/button";
 import { Product } from "@/type";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { useCart } from "@/store/cart.store";
 import FavoriteIcon from "../FavoriteIcon";
-const ProductDetail = ({ product }: { product: Product }) => {
-   const { add } = useCart();
+
+export interface ProductData {
+   product: Product;
+}
+
+const ProductDetail: React.FC<ProductData> = ({ product }) => {
+
    return (
-      <Card key={product.id} className="group overflow-hidden transition-all md:hover:scale-105">
+      <Card
+         key={product.id}
+         className="bg-productBackground group overflow-hidden rounded-none p-[24px] shadow-none transition-all md:hover:scale-105"
+      >
          {/* image */}
-         <CardHeader className="relative aspect-square w-full overflow-hidden rounded-md">
+         <CardHeader className="relative w-full overflow-hidden">
             <img
                alt={product.imageAlt}
                src={product.imageSrc}
                loading="lazy"
-               className="rounded-md object-cover object-center"
+               className="h-[300px] w-full object-cover object-center"
             />
          </CardHeader>
          {/* card content */}
          <CardContent className="mt-1 space-y-1">
-            <Link to={`/product/${product.id}`}>
-               <h3 className="text-muted-foreground hover:underline hover:underline-offset-2">{product.name}</h3>
-            </Link>
+            <div className="py-[24px]">
+               <Link to={`/product/${product.id}`}>
+                  <h3 className="text-textGray text-[22px] font-[500] text-muted-foreground hover:underline hover:underline-offset-2">
+                     {product.name}
+                  </h3>
+               </Link>
 
-            <p className="text-lg font-medium text-accent-foreground">${product.price}</p>
-            <Button variant="outline" onClick={() => add(product)}>
-               <Link to={product.href}>Add to cart</Link>
-            </Button>
-            <FavoriteIcon product={product} className="absolute right-4 top-3 rounded-full bg-background p-2" />
+               <Link to={`/author/${product.authorSlug}`}>
+                  <h3 className="text-textGray mt-[4px] text-[18px] font-[500] text-muted-foreground hover:underline hover:underline-offset-2">
+                     {product.author}
+                  </h3>
+               </Link>
+            </div>
+
+            <p className="text-textGray !mt-0 text-[18px] font-[600] text-accent-foreground">
+               {product.price}
+               <span className="ms-1">AZN</span>
+            </p>
+            <FavoriteIcon product={product} className="absolute p-2 rounded-full right-4 top-3 bg-background" />
          </CardContent>
       </Card>
    );
 };
+
 export default ProductDetail;

@@ -1,15 +1,17 @@
 import { products as apiProducts } from "@/constants";
 import ProductDetail from "./ProductDetail";
-
 import "./products.scss";
 import FilterSelect from "../FilterSelect";
 import { useMemo, useState } from "react";
 import { useFilterStore } from "@/store/filter.store";
 import AnimatedReveal from "../AnimationComponent";
+import { CardTitle } from "@/components/ui/card";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 const Porducts = () => {
    const [products] = useState(apiProducts);
    const { filterName } = useFilterStore();
+   const [productsSlice, setProductsSlice] = useState<number>(8);
 
    const filterProducts = useMemo(() => {
       switch (filterName) {
@@ -22,21 +24,35 @@ const Porducts = () => {
             return products;
       }
    }, [filterName, products]);
+
    return (
       <>
          {/* filter */}
-         <div className="filter-box mb-5 mt-5 flex items-center justify-between p-2">
-            <h4>Mövcüd elanlar ({filterProducts.length})</h4>
+         <div className="flex items-center justify-between p-2 mt-5 mb-5 filter-box">
+            <h4>Mövcüd olan ({filterProducts.length})</h4>
             <FilterSelect />
          </div>
+         <CardTitle className="mt-[50px] text-[24px]">Əsərlər</CardTitle>
+
          {/* filterProducts */}
-         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-            {filterProducts.map((product, i) => (
+
+         <div className="mt-[36px] grid grid-cols-1 gap-[12px] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-[20px]">
+            {filterProducts.slice(0, productsSlice).map((product, i) => (
                <AnimatedReveal layout key={product.id} delay={0.25 + i * 0.09} blur="6px">
                   <ProductDetail product={product} />
                </AnimatedReveal>
             ))}
          </div>
+
+         {/* Add More Products */}
+         {productsSlice <= filterProducts.length && (
+            <button
+               onClick={() => setProductsSlice((prev) => prev + 8)}
+               className="text-textTitle mx-auto mb-[20px] mt-[60px] flex items-center justify-center gap-x-[16px] text-[20px] font-[500]"
+            >
+               Daha Cox <IoIosArrowRoundForward className="text-[35px]" />
+            </button>
+         )}
       </>
    );
 };
