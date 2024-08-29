@@ -1,8 +1,9 @@
 /* eslint-disable react-refresh/only-export-components */
 import { Suspense, lazy } from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, ScrollRestoration } from "react-router-dom";
 import { Router } from "@remix-run/router";
 import Loading from "@/components/shared/Loading"; // Yükleme bileşenini import edin
+import AuthorDetail from "@/pages/root/AuthorDetail";
 
 // Error boundary bileşeni
 const RootBoundary = lazy(() => import("@/components/shared/ErrorElement"));
@@ -29,6 +30,7 @@ const router: Router = createBrowserRouter([
       element: (
          <Suspense fallback={<Loading />}>
             <RootLayout />
+            <ScrollRestoration />
          </Suspense>
       ),
       errorElement: (
@@ -85,7 +87,14 @@ const router: Router = createBrowserRouter([
                </Suspense>
             ),
          },
-         
+         {
+            path: "/author/:slug",
+            element: (
+               <Suspense fallback={<Loading />}>
+                  <AuthorDetail />
+               </Suspense>
+            ),
+         },
       ],
    },
    // Auth layout
