@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { products as apiProducts } from "@/constants";
 import React, { useState } from "react";
 import { Product } from "@/type";
