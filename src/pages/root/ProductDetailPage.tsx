@@ -170,13 +170,13 @@ const ProductDetailPage: React.FC = () => {
             </div>
          </div>
          <section className="container mb-7 mt-[30px] px-0 md:mt-[120px]">
-            <Title className="text-[20px] font-[500] md:text-[24px] mb-[10px] md:mb-0 ms-[2px] md:ms-2">Daha Cox</Title>
+            <Title className="mb-[10px] ms-[2px] text-[20px] font-[500] md:mb-0 md:ms-2 md:text-[24px]">Daha Cox</Title>
 
             <Slider {...settings}>
                {products.map((product, i) => (
                   <div
                      key={product.id}
-                     className="flex flex-shrink-0 w-full p-1 mb-3 md:p-[10px] sm:w-1/2 md:w-1/3 lg:w-1/4"
+                     className="mb-3 flex w-full flex-shrink-0 p-1 sm:w-1/2 md:w-1/3 md:p-[10px] lg:w-1/4"
                   >
                      <AnimatedReveal layout delay={0.25 + i * 0.09} blur="6px">
                         <SlideDetail product={product} />

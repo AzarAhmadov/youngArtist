@@ -8,7 +8,6 @@ import { GoDotFill } from "react-icons/go";
 import ProductDetail from "@/components/shared/products/ProductDetail";
 import { Title } from "@/components/ui/title";
 
-
 const AuthorDetail: React.FC = () => {
    const [products] = useState<Product[]>(apiProducts);
    // const [product, setProduct] = useState<Product>();
@@ -22,17 +21,17 @@ const AuthorDetail: React.FC = () => {
 
    return (
       <>
-         <AnimatedLayout className="body-font container mt-24 overflow-hidden text-gray-600">
+         <AnimatedLayout className="container mt-24 overflow-hidden text-gray-600 body-font">
             <div className="grid grid-cols-1 gap-[50px] md:grid-cols-[1fr_2fr]">
                <AnimatedReveal delay={0.4} blur="6px">
-                  <div className="relative h-[450px] w-[450px] bg-gray-200">
-                     <img className="absolute inset-0 h-full w-full object-cover" src={findAuthorBySlug?.authorImg} />
+                  <div className="relative aspect-[4/4] bg-gray-200">
+                     <img className="absolute inset-0 object-cover w-full h-full" src={findAuthorBySlug?.authorImg} />
                   </div>
                </AnimatedReveal>
 
                <AnimatedReveal delay={0.4} blur="6px">
                   <h6 className="title-font mb-7 text-[24px] font-medium text-textBlack">{findAuthorBySlug?.author}</h6>
-                  <div className="text-[16px] text-textBlack my-2">
+                  <div className="my-2 text-[16px] text-textBlack">
                      <p> Aliyeva Natavan 1992-ci ildə Bakı şəhərində anadan olub. </p>
 
                      <p className="mb-4">
@@ -80,7 +79,9 @@ const AuthorDetail: React.FC = () => {
                </AnimatedReveal>
             </div>
             <section>
-            <Title className="text-[20px] font-[500] md:text-[24px] mb-[10px] md:mb-0 ms-[2px] md:ms-2">Əsərləri</Title>
+               <Title className="mb-[10px] ms-[2px] text-[20px] font-[500] md:mb-0 md:ms-2 md:text-[24px]">
+                  Əsərləri
+               </Title>
                <div className="mt-[36px] grid grid-cols-1 gap-[12px] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-[20px]">
                   {filteredProducts.map((product, i) => (
                      <AnimatedReveal layout key={product.id} delay={0.25 + i * 0.09} blur="6px">
