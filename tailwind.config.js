@@ -21,6 +21,7 @@ module.exports = {
             productBackground:"#ECECEC",
             textGray:"#606060",
             textTitle:"#111111",
+            textBlack:"#000000",
             primary: {
                DEFAULT: "hsl(var(--primary))",
                foreground: "hsl(var(--primary-foreground))",

@@ -7,4 +7,5 @@ export interface Product {
    imageAlt: string;
    authorSlug: string;
    size: string;
+   authorImg:string;
 }
