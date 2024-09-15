@@ -17,7 +17,7 @@ interface LogoProps {
 
 const Logo: React.FC<LogoProps> = ({ variant }) => {
    return (
-      <Link to="/" className="flex flex-col font-bold playfair-font">
+      <Link to="/" className="playfair-font flex flex-col font-bold">
          <h1 className="text-[18px] md:text-[25px]">Young Artists Hub</h1>
          <span className="flex items-center gap-x-[10px] text-[13px] leading-[30px]">
             Baku <span className={separatorStyles({ variant })}></span> Azerbaijan
