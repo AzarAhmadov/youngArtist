@@ -11,7 +11,7 @@ import BasketButton from "./BasketButton";
 
 const Navbar = () => {
    return (
-      <header className="h-[105px]">
+      <header className="h-[85px] sm:h-[105px]">
          <div className="fixed top-0 z-50 w-full border-b border-b-black bg-background/60 py-[10px] sm:py-[20px] backdrop-blur">
             <AnimatedReveal distance={0} delay={0.3} blur="6px">
                <div className="container flex items-center justify-between h-16">
