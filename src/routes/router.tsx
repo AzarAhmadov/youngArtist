@@ -4,6 +4,7 @@ import { createBrowserRouter, ScrollRestoration } from "react-router-dom";
 import { Router } from "@remix-run/router";
 import Loading from "@/components/shared/Loading"; // Yükleme bileşenini import edin
 import AuthorDetail from "@/pages/root/AuthorDetail";
+import Confirm from "@/pages/root/Confirm";
 
 // Error boundary bileşeni
 const RootBoundary = lazy(() => import("@/components/shared/ErrorElement"));
@@ -101,6 +102,14 @@ const router: Router = createBrowserRouter([
             element: (
                <Suspense fallback={<Loading />}>
                   <Orders />
+               </Suspense>
+            ),
+         },
+         {
+            path: "/confirm",
+            element: (
+               <Suspense fallback={<Loading />}>
+                  <Confirm />
                </Suspense>
             ),
          },
