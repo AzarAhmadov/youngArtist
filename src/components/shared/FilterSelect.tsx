@@ -1,5 +1,6 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { FilterName, useFilterStore } from "@/store/filter.store";
+
 const FilterSelect = () => {
    const { addFilter } = useFilterStore();
 
@@ -10,11 +11,11 @@ const FilterSelect = () => {
    return (
       <Select onValueChange={filterChange}>
          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Siralayin" />
+            <SelectValue placeholder="Qiymət aralığı" />
          </SelectTrigger>
          <SelectContent>
-            <SelectItem value="azalan">Azalan</SelectItem>
-            <SelectItem value="artan">Artan</SelectItem>
+            <SelectItem value="azalan">Bahadan ucuza</SelectItem>
+            <SelectItem value="artan">Ucuzdan bahayar</SelectItem>
          </SelectContent>
       </Select>
    );
