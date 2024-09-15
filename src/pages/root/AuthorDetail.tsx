@@ -71,7 +71,7 @@ const AuthorDetail: React.FC = () => {
                </div>
             </AnimatedReveal>
          </div>
-         <section>
+         <section className="mt-[40px] md:mt-[120px]">
             <Title className="mb-[10px] ms-[2px] text-[20px] font-[500] md:mb-0 md:ms-2 md:text-[24px]">Əsərləri</Title>
             <div className="mt-[36px] grid grid-cols-1 gap-[12px] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-[20px]">
                {filteredProducts.map((product, i) => (
