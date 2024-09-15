@@ -2,7 +2,7 @@ import AnimatedLayout from "@/components/shared/AnimatedLayout";
 
 const Contact = () => {
    return (
-      <AnimatedLayout className="mt-16">
+      <AnimatedLayout>
          <div> Contact </div>
       </AnimatedLayout>
    );

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import FavoriteIcon from "../FavoriteIcon";
-import { ProductData } from "../products/ProductDetail";
+import { ProductData } from "../products/ProductCards";
 
 const SlideDetail: React.FC<ProductData> = ({ product }) => {
    return (

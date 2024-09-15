@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+   font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2,
+.header_link {
+   font-family: "Playfair Display", serif;
+   font-size: 25px;
+   font-weight: 500;
+   line-height: 150%;
+}
+
 @layer base {
    :root {
       --background: 0 0% 100%;

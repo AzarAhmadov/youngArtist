@@ -62,9 +62,10 @@ const ProductDetailPage: React.FC = () => {
          },
       ],
    };
+   
 
    return (
-      <AnimatedLayout className="container mt-24 overflow-hidden text-gray-600 body-font">
+      <AnimatedLayout className="container mt-[60px]  overflow-hidden text-gray-600 body-font">
          <Link
             to="/"
             className={buttonVariants({

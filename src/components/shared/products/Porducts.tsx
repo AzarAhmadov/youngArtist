@@ -1,5 +1,5 @@
 import { products as apiProducts } from "@/constants";
-import ProductDetail from "./ProductDetail";
+import ProductCards from "./ProductCards";
 import "./products.scss";
 import FilterSelect from "../FilterSelect";
 import { useMemo, useState } from "react";
@@ -39,7 +39,7 @@ const Porducts = () => {
          <div className="mt-[36px] grid grid-cols-1 gap-[12px] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-[20px]">
             {filterProducts.slice(0, productsSlice).map((product, i) => (
                <AnimatedReveal layout key={product.id} delay={0.25 + i * 0.09} blur="6px">
-                  <ProductDetail product={product} />
+                  <ProductCards product={product} />
                </AnimatedReveal>
             ))}
          </div>

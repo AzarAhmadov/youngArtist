@@ -8,7 +8,6 @@ export interface ProductData {
 }
 
 const ProductDetail: React.FC<ProductData> = ({ product }) => {
-   console.log(product);
 
    return (
       <Card

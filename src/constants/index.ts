@@ -11,10 +11,6 @@ export const navlinks = [
       name: "Əlaqə",
       path: "/contact",
    },
-   {
-      name: "Cart",
-      path: "/cart",
-   },
 ];
 
 export const products = [

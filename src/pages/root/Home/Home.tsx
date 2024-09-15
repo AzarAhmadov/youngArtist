@@ -8,7 +8,7 @@ import AnimatedReveal from "@/components/shared/AnimationComponent";
 
 const Home = () => {
    const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
@@ -17,7 +17,7 @@ const Home = () => {
    return (
       <AnimatedLayout>
          <Slider {...settings}>
-            <div className="bg bg1 mt-16 flex h-[calc(100vh-64px)] items-center justify-center">
+            <div className="bg bg1 flex h-[calc(100vh-64px)] items-center justify-center">
                <div className="flex flex-col items-center justify-center h-full text">
                   <AnimatedReveal delay={0.45} blur="6px">
                      <h1 className="mx-auto max-w-6xl animate-shine bg-[linear-gradient(110deg,#efefef,45%,#b9b9b9,55%,#b3b3b3)] bg-[length:200%_100%] bg-clip-text text-center font-serif text-4xl font-medium uppercase text-transparent md:text-5xl">
@@ -30,7 +30,7 @@ const Home = () => {
                </div>
                <div className="absolute top-0 left-0 w-full h-full bg-blur"></div>
             </div>
-            <div className="bg bg2 mt-16 h-[calc(100vh-64px)]">
+            <div className="bg bg2 h-[calc(100vh-64px)]">
                <div className="flex flex-col items-center justify-center h-full text">
                   <AnimatedReveal delay={0.45} blur="6px">
                      <h1 className="mx-auto inline-flex max-w-6xl animate-shine bg-[linear-gradient(110deg,#efefef,45%,#b9b9b9,55%,#b3b3b3)] bg-[length:200%_100%] bg-clip-text text-center font-serif text-4xl font-medium uppercase text-transparent md:text-5xl">
@@ -44,7 +44,7 @@ const Home = () => {
                <div className="absolute top-0 left-0 w-full h-full bg-blur"></div>
             </div>
 
-            <div className="bg bg3 mt-16 h-[calc(100vh-64px)]">
+            <div className="bg bg3 h-[calc(100vh-64px)]">
                <div className="flex flex-col items-center justify-center h-full text">
                   <AnimatedReveal delay={0.45} blur="6px">
                      <h1 className="mx-auto inline-flex max-w-6xl animate-shine bg-[linear-gradient(110deg,#efefef,45%,#b9b9b9,55%,#b3b3b3)] bg-[length:200%_100%] bg-clip-text text-center font-serif text-4xl font-medium uppercase text-transparent md:text-5xl">

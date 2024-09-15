@@ -4,11 +4,12 @@ import { Link } from "react-router-dom";
 
 const FavoriteButton = () => {
    const { favorites } = useFavoriteStore();
+   // console.log(favorites)
    const favoriteCount = favorites.length;
    return (
       <Link to="/favorite" className="relative">
          <Heart />
-         <span className="absolute -right-3 -top-1 flex h-4 items-center justify-center rounded-full px-1 text-sm">
+         <span className="absolute flex items-center justify-center h-4 px-1 text-sm rounded-full -right-3 -top-1">
             {favoriteCount}
          </span>
       </Link>

@@ -4,7 +4,7 @@ import { useCart } from "@/store/cart.store";
 const Cart = () => {
    const { cart } = useCart();
    return (
-      <AnimatedLayout className="mt-16">
+      <AnimatedLayout>
          <div>
             Cart
             <pre className="bg-zinc-100">{JSON.stringify(cart, null, 2)}</pre>{" "}
