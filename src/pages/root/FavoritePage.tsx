@@ -4,7 +4,7 @@ import { useFavoriteStore } from "@/store/favorite.store";
 const FavoritePage = () => {
    const { favorites } = useFavoriteStore();
    return (
-      <AnimatedLayout className="mt-16">
+      <AnimatedLayout>
          FavoritePage
          <pre className="bg-zinc-100">{JSON.stringify(favorites, null, 2)}</pre>
       </AnimatedLayout>

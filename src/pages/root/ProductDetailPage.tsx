@@ -64,7 +64,7 @@ const ProductDetailPage: React.FC = () => {
    };
 
    return (
-      <AnimatedLayout className="container mt-24 overflow-hidden text-gray-600 body-font">
+      <AnimatedLayout className="body-font container mt-[30px] overflow-hidden text-gray-600 sm:mt-[60px]">
          <Link
             to="/"
             className={buttonVariants({
@@ -106,7 +106,7 @@ const ProductDetailPage: React.FC = () => {
                   <div className="space-y-2">
                      <div className="flex items-center gap-3">
                         <Button
-                           className="h-[54px] rounded-none px-[50px] text-[20px] font-[600]"
+                           className="h-[40px] rounded-none text-[15px] font-[600] sm:h-[54px] sm:px-[50px] sm:text-[20px]"
                            onClick={() => {
                               if (product) add(product);
                            }}

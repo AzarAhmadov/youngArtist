@@ -1,12 +1,12 @@
 import { products as apiProducts } from "@/constants";
-import ProductDetail from "./ProductDetail";
+import ProductCards from "./ProductCards";
 import "./products.scss";
 import FilterSelect from "../FilterSelect";
 import { useMemo, useState } from "react";
 import { useFilterStore } from "@/store/filter.store";
 import AnimatedReveal from "../AnimationComponent";
 import { CardTitle } from "@/components/ui/card";
-import { IoIosArrowRoundForward } from "react-icons/io";
+import LoadMore from "@/components/ui/LoadMore";
 
 const Porducts = () => {
    const [products] = useState(apiProducts);
@@ -39,19 +39,13 @@ const Porducts = () => {
          <div className="mt-[36px] grid grid-cols-1 gap-[12px] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-[20px]">
             {filterProducts.slice(0, productsSlice).map((product, i) => (
                <AnimatedReveal layout key={product.id} delay={0.25 + i * 0.09} blur="6px">
-                  <ProductDetail product={product} />
+                  <ProductCards product={product} />
                </AnimatedReveal>
             ))}
          </div>
 
-         {/* Add More Products */}
          {productsSlice <= filterProducts.length && (
-            <button
-               onClick={() => setProductsSlice((prev) => prev + 8)}
-               className="text-textTitle mx-auto mb-[20px] mt-[60px] flex items-center justify-center gap-x-[16px] text-[20px] font-[500]"
-            >
-               Daha Cox <IoIosArrowRoundForward className="text-[35px]" />
-            </button>
+            <LoadMore setProductsSlice={() => setProductsSlice((prev) => prev + 8)} />
          )}
       </>
    );

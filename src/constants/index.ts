@@ -11,10 +11,6 @@ export const navlinks = [
       name: "Əlaqə",
       path: "/contact",
    },
-   {
-      name: "Cart",
-      path: "/cart",
-   },
 ];
 
 export const products = [
@@ -31,7 +27,7 @@ export const products = [
    },
    {
       id: 2,
-      name: "Göz Nuru",
+      name: "Gizli Düşüncə",
       author: "Vəliyeva sara",
       authorSlug: "veliyeva-sara",
       size: "100x100",
