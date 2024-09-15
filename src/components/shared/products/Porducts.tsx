@@ -6,7 +6,7 @@ import { useMemo, useState } from "react";
 import { useFilterStore } from "@/store/filter.store";
 import AnimatedReveal from "../AnimationComponent";
 import { CardTitle } from "@/components/ui/card";
-import { IoIosArrowRoundForward } from "react-icons/io";
+import LoadMore from "@/components/ui/loadMore";
 
 const Porducts = () => {
    const [products] = useState(apiProducts);
@@ -28,7 +28,7 @@ const Porducts = () => {
    return (
       <>
          {/* filter */}
-         <div className="flex items-center justify-between p-2 mt-5 mb-5 filter-box">
+         <div className="filter-box mb-5 mt-5 flex items-center justify-between p-2">
             <h4>Mövcüd olan ({filterProducts.length})</h4>
             <FilterSelect />
          </div>
@@ -46,12 +46,7 @@ const Porducts = () => {
 
          {/* Add More Products */}
          {productsSlice <= filterProducts.length && (
-            <button
-               onClick={() => setProductsSlice((prev) => prev + 8)}
-               className="text-textTitle mx-auto mb-[20px] mt-[60px] flex items-center justify-center gap-x-[16px] text-[20px] font-[500]"
-            >
-               Daha Cox <IoIosArrowRoundForward className="text-[35px]" />
-            </button>
+            <LoadMore setProductsSlice={() => setProductsSlice((prev) => prev + 8)} />
          )}
       </>
    );

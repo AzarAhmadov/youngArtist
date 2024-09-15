@@ -15,7 +15,7 @@ const AuthorDetail: React.FC = () => {
    const filteredProducts = products.filter((item: any) => item.authorSlug === slug);
 
    return (
-      <AnimatedLayout className="body-font container mt-[60px] overflow-hidden text-gray-600">
+      <AnimatedLayout className="body-font container mt-[30px] sm:mt-[60px] overflow-hidden text-gray-600">
          <div className="grid grid-cols-1 gap-[50px] md:grid-cols-[1fr_2fr]">
             <AnimatedReveal delay={0.4} blur="6px">
                <div className="relative aspect-[4/4] bg-gray-200">

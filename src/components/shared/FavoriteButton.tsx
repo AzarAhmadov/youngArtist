@@ -9,9 +9,11 @@ const FavoriteButton = () => {
    return (
       <Link to="/favorite" className="relative">
          <Heart />
-         <span className="absolute flex items-center justify-center h-4 px-1 text-sm rounded-full -right-3 -top-1">
-            {favoriteCount}
-         </span>
+         {favoriteCount > 0 && (
+            <span className="absolute -right-2 -top-2 flex size-[17px] items-center justify-center rounded-full bg-black text-[11px] text-white">
+               {favoriteCount}
+            </span>
+         )}
       </Link>
    );
 };

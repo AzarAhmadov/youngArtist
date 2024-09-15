@@ -1,15 +1,14 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaTelegramPlane, FaYoutube } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Logo from "./Logo";
 
 const Footer: React.FC = () => {
    return (
       <>
-         <div className="mt-10 border-t bg-black pb-32 pt-10 text-center text-white">
-            <div className="align-item-center flex flex-wrap justify-evenly">
-               <div>
-                  <h2>Young Artists Hub</h2>
-               </div>
+         <div className="pt-10 pb-32 mt-10 text-center text-white bg-black border-t">
+            <div className="flex flex-wrap align-item-center justify-evenly">
+               <Logo variant="footer"/>
                <div>
                   <h5 className="pb-5">Digər linklər</h5>
                   <ul>

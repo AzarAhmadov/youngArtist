@@ -3,9 +3,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { toast } from "sonner";
 
-interface FavoriteItem extends Product {
-   // Buraya ürünle ilgili ek özellikler ekleyebilirsiniz
-}
+interface FavoriteItem extends Product {}
 
 type FavoriteStore = {
    favorites: FavoriteItem[];
@@ -26,11 +24,11 @@ export const useFavoriteStore = create<FavoriteStore>()(
                const updatedFavorites = [...favorites, product];
 
                set({ favorites: updatedFavorites });
-               toast.success("Product added to favorites", {
+               toast.success("Məhsul sevimlilərə əlavə edildi", {
                   duration: 2000,
                });
             } else {
-               toast.warning("Product already in favorites", {
+               toast.warning("Məhsul artıq favoritlərdədir", {
                   duration: 2000,
                });
             }
@@ -40,13 +38,13 @@ export const useFavoriteStore = create<FavoriteStore>()(
             const updatedFavorites = favorites.filter((item) => item.id !== id);
 
             set({ favorites: updatedFavorites });
-            toast.success("Product removed from favorites", {
+            toast.success("Məhsul sevimlilərdən silindi", {
                duration: 2000,
             });
          },
          removeAll: () => {
             set({ favorites: [] });
-            toast.info("All products removed from favorites", {
+            toast.info("Bütün məhsullar sevimlilərdən silindi", {
                duration: 2000,
             });
          },

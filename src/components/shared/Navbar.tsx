@@ -3,10 +3,11 @@ import { navlinks } from "@/constants";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import MobileNav from "./MobileNav";
-import CartSheet from "./CartSheet";
 import AnimatedReveal from "./AnimationComponent";
 import FavoriteButton from "./FavoriteButton";
-import { Search } from "lucide-react";
+import { Search, ShoppingCart } from "lucide-react";
+import Logo from "./Logo";
+import BasketButton from "./BasketButton";
 
 const Navbar = () => {
    return (
@@ -15,12 +16,7 @@ const Navbar = () => {
             <AnimatedReveal distance={0} delay={0.3} blur="6px">
                <div className="container flex items-center justify-between h-16">
                   {/* logo */}
-                  <Link to="/" className="flex flex-col font-bold header_link">
-                     <h1 className="text-[18px] md:text-[25px]"> Young Artists Hub</h1>
-                     <span className="flex items-center gap-x-[10px] text-[13px] leading-[30px]">
-                        Baku <span className="block h-[23px] w-[2px] bg-black"></span> Azerbaijan
-                     </span>
-                  </Link>
+                  <Logo variant="header" />
 
                   {/* navitems */}
                   <nav className="items-center hidden h-full gap-6 lg:flex">
@@ -72,7 +68,7 @@ const Navbar = () => {
                      {/* shoping button */}
                      <Search className="cursor-pointer" />
                      <FavoriteButton />
-                     <CartSheet />
+                   <BasketButton/>
 
                      {/* mobile nav */}
                      <MobileNav />
