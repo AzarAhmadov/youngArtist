@@ -6,7 +6,7 @@ import { useMemo, useState } from "react";
 import { useFilterStore } from "@/store/filter.store";
 import AnimatedReveal from "../AnimationComponent";
 import { CardTitle } from "@/components/ui/card";
-import LoadMore from "@/components/ui/loadMore";
+import LoadMore from "@/components/ui/LoadMore";
 
 const Porducts = () => {
    const [products] = useState(apiProducts);
@@ -28,7 +28,7 @@ const Porducts = () => {
    return (
       <>
          {/* filter */}
-         <div className="filter-box mb-5 mt-5 flex items-center justify-between p-2">
+         <div className="flex items-center justify-between p-2 mt-5 mb-5 filter-box">
             <h4>Mövcüd olan ({filterProducts.length})</h4>
             <FilterSelect />
          </div>
@@ -44,7 +44,6 @@ const Porducts = () => {
             ))}
          </div>
 
-         {/* Add More Products */}
          {productsSlice <= filterProducts.length && (
             <LoadMore setProductsSlice={() => setProductsSlice((prev) => prev + 8)} />
          )}

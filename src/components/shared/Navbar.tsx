@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import MobileNav from "./MobileNav";
 import AnimatedReveal from "./AnimationComponent";
 import FavoriteButton from "./FavoriteButton";
-import { Search, ShoppingCart } from "lucide-react";
+import { Search } from "lucide-react";
 import Logo from "./Logo";
 import BasketButton from "./BasketButton";
 
@@ -14,12 +14,12 @@ const Navbar = () => {
       <header className="h-[105px]">
          <div className="fixed top-0 z-50 w-full border-b border-b-black bg-background/60 py-[20px] backdrop-blur">
             <AnimatedReveal distance={0} delay={0.3} blur="6px">
-               <div className="container flex items-center justify-between h-16">
+               <div className="container flex h-16 items-center justify-between">
                   {/* logo */}
                   <Logo variant="header" />
 
                   {/* navitems */}
-                  <nav className="items-center hidden h-full gap-6 lg:flex">
+                  <nav className="hidden h-full items-center gap-6 lg:flex">
                      {navlinks.map((link) => (
                         <NavLink
                            key={link.name}
@@ -35,7 +35,7 @@ const Navbar = () => {
                                  {link.name}
                                  {isActive && (
                                     <motion.span
-                                       className="absolute rounded-md -inset-x-2 inset-y-4"
+                                       className="absolute -inset-x-2 inset-y-4 rounded-md"
                                        layoutId="nav-item"
                                        transition={{
                                           duration: 0.3,
@@ -68,7 +68,7 @@ const Navbar = () => {
                      {/* shoping button */}
                      <Search className="cursor-pointer" />
                      <FavoriteButton />
-                   <BasketButton/>
+                     <BasketButton />
 
                      {/* mobile nav */}
                      <MobileNav />

@@ -5,7 +5,7 @@ import { Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ProductCards from "@/components/shared/products/ProductCards";
-import LoadMore from "@/components/ui/loadMore";
+import LoadMore from "@/components/ui/LoadMore";
 import { useCart } from "@/store/cart.store";
 
 const Orders: React.FC = () => {
