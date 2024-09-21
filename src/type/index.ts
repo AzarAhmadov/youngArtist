@@ -9,9 +9,10 @@ export interface Product {
    imageAlt: string;
    authorSlug: string;
    size: string;
-   authorImg:string;
+   authorImg: string;
 }
 
 export interface FormGroupProps {
    children: ReactNode;
+   className?: string;
 }

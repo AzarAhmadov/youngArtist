@@ -55,7 +55,7 @@ const Order: React.FC<OrderProps> = ({ variant, page }) => {
                               <Plus />
                            </button>
                         </div>
-                        <span>{item.price} AZN</span>
+                        <span className="text-textBlack font-[600] text-[18px]">{item.price} AZN</span>
                         <button onClick={() => removeProduct(item.id)}>
                            <Trash2 />
                         </button>

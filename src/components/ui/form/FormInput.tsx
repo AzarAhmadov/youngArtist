@@ -5,15 +5,16 @@ interface FormInputProps {
    type: string;
    placeholder: string;
    value?: string | number;
+   className?: string;
    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const FormInput: React.FC<FormInputProps> = ({ id, type = "text", placeholder = "", value, onChange }) => {
+const FormInput: React.FC<FormInputProps> = ({ className, id, type = "text", placeholder = "", value, onChange }) => {
    return (
       <input
          onChange={onChange}
          value={value}
-         className="w-full bg-transparent text-[20px] text-[500] outline-none placeholder:text-[20px] placeholder:text-[#9C9C9C]"
+         className={`w-full bg-transparent text-[20px] text-[500] outline-none placeholder:text-[20px] placeholder:text-[#9C9C9C] ${className}`}
          id={id}
          type={type}
          placeholder={placeholder}
