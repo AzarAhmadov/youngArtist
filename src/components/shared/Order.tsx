@@ -3,6 +3,7 @@ import { Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
 import { cva } from "class-variance-authority";
+import LinkBtn from "../ui/LinkBtn";
 
 const separatorStyles = cva("flex flex-col gap-x-[100px] gap-y-[24px]", {
    variants: {
@@ -109,14 +110,7 @@ const Order: React.FC<OrderProps> = ({ variant, page }) => {
                      <span className="text-[700]">{totalPrice + 5} AZN</span>
                   </li>
                </ul>
-               {page === "order_page" && (
-                  <Link
-                     to={"/"}
-                     className="block w-full bg-black py-[15px] text-center text-[16px] font-[600] text-[#FFFCFC] md:py-[24px] md:text-[19px]"
-                  >
-                     Sifarişi təsdiqlə
-                  </Link>
-               )}
+               {page === "order_page" && <LinkBtn to="confirm">Sifarişi təsdiqlə</LinkBtn>}
             </div>
          )}
       </div>

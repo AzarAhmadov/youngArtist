@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface Product {
    id: number;
    name: string;
@@ -8,4 +10,8 @@ export interface Product {
    authorSlug: string;
    size: string;
    authorImg:string;
+}
+
+export interface FormGroupProps {
+   children: ReactNode;
 }
