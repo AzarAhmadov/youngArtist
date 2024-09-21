@@ -1,8 +1,9 @@
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "../ui/button";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { navlinks } from "@/constants";
 
 const MobileNav = () => {
    const [open, setOpen] = useState(false);
@@ -21,15 +22,16 @@ const MobileNav = () => {
             </SheetHeader>
 
             <nav className="flex flex-col items-center space-y-4 text-lg font-medium">
-               <Link to="/" className="hover:text-blue-600">
-                  Ana səhifə
-               </Link>
-               <Link to="/contact" className="hover:text-blue-600">
-                  Əlaqə
-               </Link>
-               <Link to="/about" className="hover:text-blue-600">
-                  Haqqımızda
-               </Link>
+               {navlinks.map((item, key) => (
+                  <Link
+                     onClick={() => setOpen(!open)}
+                     key={key}
+                     to={item.path}
+                     className="transition-all hover:text-textGray"
+                  >
+                     {item.name}
+                  </Link>
+               ))}
             </nav>
 
             <div className="w-full border-t border-gray-300"></div>
