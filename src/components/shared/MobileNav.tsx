@@ -1,9 +1,12 @@
 import { Menu } from "lucide-react";
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "../ui/button";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
 const MobileNav = () => {
    const [open, setOpen] = useState(false);
+
    return (
       <Sheet open={open} onOpenChange={setOpen}>
          <SheetTrigger asChild>
@@ -11,16 +14,48 @@ const MobileNav = () => {
                <Menu />
             </Button>
          </SheetTrigger>
-         <SheetContent>
+
+         <SheetContent className="flex flex-col items-center pt-8 space-y-6">
             <SheetHeader>
-               <SheetTitle>Are you absolutely sure?</SheetTitle>
-               <SheetDescription>
-                  This action cannot be undone. This will permanently delete your account and remove your data from our
-                  servers.
-               </SheetDescription>
+               <SheetTitle className="text-xl font-semibold playfair-font">Young Artist Hub</SheetTitle>
             </SheetHeader>
+
+            <nav className="flex flex-col items-center space-y-4 text-lg font-medium">
+               <Link to="/" className="hover:text-blue-600">
+                  Ana səhifə
+               </Link>
+               <Link to="/contact" className="hover:text-blue-600">
+                  Əlaqə
+               </Link>
+               <Link to="/about" className="hover:text-blue-600">
+                  Haqqımızda
+               </Link>
+            </nav>
+
+            <div className="w-full border-t border-gray-300"></div>
+
+            <div className="flex space-x-4">
+               <Button asChild variant="default" className="px-6 py-2">
+                  <Link to={"/login"}>Daxil ol</Link>
+               </Button>
+               <Button asChild variant="outline" className="px-6 py-2">
+                  <Link to={"/register"}>Qeydiyyat</Link>
+               </Button>
+            </div>
+
+            <div className="w-full border-t border-gray-300"></div>
+            <div className="space-y-2 text-center">
+               <p className="font-semibold">Bizimlə əlaqə</p>
+               <p>+(994) 709 985 865</p>
+               <p>
+                  <a href="mailto:theyoungh@gmail.com" className="hover:text-blue-600">
+                     theyoungh@gmail.com
+                  </a>
+               </p>
+            </div>
          </SheetContent>
       </Sheet>
    );
 };
+
 export default MobileNav;
