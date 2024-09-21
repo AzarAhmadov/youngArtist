@@ -7,9 +7,6 @@ import React from "react";
 import InputMask from "react-input-mask";
 
 const Confirm: React.FC = () => {
-   const maxNameLength = 35;
-   const nameMask = "A".repeat(maxNameLength);
-
    return (
       <div className="container mt-[60px] gap-x-[40px] lg:flex xl:gap-x-[70px]">
          <div className="flex-1">
@@ -39,7 +36,7 @@ const Confirm: React.FC = () => {
                   </FormGroup>
                </div>
 
-               <div className="mt-[25px] lg:mt-[45px] space-y-[12px] bg-[#ECECEC4D] p-[16px]">
+               <div className="mt-[25px] space-y-[12px] bg-[#ECECEC4D] p-[16px] lg:mt-[45px]">
                   <h3 className="mb-[12px] text-[20px] font-[500] text-[#111111]">Çatdırılma ünvanı</h3>
 
                   <FormGroup>
@@ -70,15 +67,16 @@ const Confirm: React.FC = () => {
                      <FormLabel label="Kart nömrəsi" htmlFor="cardNumber">
                         Ad və Soyad
                      </FormLabel>
-                     <InputMask
+                     <input
+                        type="text"
+                        name="name"
                         placeholder="Ad və Soyad"
                         className="mt-[12px] w-full border border-[#646464] p-[16px] text-[16px] font-[500] outline-none placeholder:text-[16px]"
-                        mask={nameMask}
-                        formatChars={{
-                           A: "[A-Za-zÇƏĞİÖŞÜçəğıöşü]",
+                        onChange={(e) => {
+                           const value = e.target.value.replace(/[^A-Za-zÇƏĞİÖŞÜçəğıöşü\s]/g, "");
+                           e.target.value = value;
                         }}
-                        maskChar=" "
-                     ></InputMask>
+                     />
                   </div>
 
                   <div className="mt-[16px]">
@@ -123,7 +121,7 @@ const Confirm: React.FC = () => {
             </form>
          </div>
 
-         <div className="xl:min-w-[700px] mt-10 lg:mt-0">
+         <div className="mt-10 lg:mt-0 xl:min-w-[700px]">
             <Order variant="confirm" page="confirm_page" />
          </div>
       </div>
