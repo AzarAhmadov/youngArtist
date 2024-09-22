@@ -53,13 +53,13 @@ const Navbar = () => {
                   <div className="flex items-center gap-3">
                      {/* auth button */}
                      <div className="mr-[44px] hidden gap-2 gap-x-[14px] text-[16px] font-[500] md:flex">
-                        <Link className="block bg-black p-[16px] text-white" to="/login">
+                        <Link className="block bg-black p-[16px] text-white" to="/register">
                            Qeydiyyat
                         </Link>
 
                         <Link
                            className="border border-black p-[16px] text-black transition-all hover:bg-black hover:text-white"
-                           to="/register"
+                           to="/login"
                         >
                            Daxil ol
                         </Link>

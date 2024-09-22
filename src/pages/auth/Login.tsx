@@ -19,8 +19,6 @@ const Login = () => {
    });
 
    const onSubmit = async (values: LoginSchemaType) => {
-      // Do something with the form values.
-      // ✅ This will be type-safe and validated.
       await new Promise((res) =>
          setTimeout(() => {
             res(console.log(values));
@@ -29,10 +27,10 @@ const Login = () => {
    };
    return (
       <AnimatedLayout>
-         <div className="flex flex-col justify-center max-w-sm mx-auto min-h-dvh">
+         <div className="mx-auto flex min-h-dvh max-w-sm flex-col justify-center">
             <Card className="p-5">
                <CardHeader className="mb-3">
-                  <CardTitle className="text-2xl">Login page</CardTitle>
+                  <CardTitle className="text-2xl">Giriş səhifəsi</CardTitle>
                </CardHeader>
                <CardContent>
                   <Form {...form}>
@@ -42,9 +40,9 @@ const Login = () => {
                            name="email"
                            render={({ field }) => (
                               <FormItem>
-                                 <FormLabel>Email</FormLabel>
+                                 <FormLabel>E-poçt</FormLabel>
                                  <FormControl>
-                                    <Input placeholder="Email" {...field} />
+                                    <Input placeholder="E-poçt" {...field} />
                                  </FormControl>
                                  <FormMessage />
                               </FormItem>
@@ -55,9 +53,9 @@ const Login = () => {
                            name="password"
                            render={({ field }) => (
                               <FormItem>
-                                 <FormLabel>Password</FormLabel>
+                                 <FormLabel>Şifrə</FormLabel>
                                  <FormControl>
-                                    <Input placeholder="Password" type="password" {...field} />
+                                    <Input placeholder="Şifrə" type="password" {...field} />
                                  </FormControl>
                                  <FormMessage />
                               </FormItem>
@@ -65,14 +63,14 @@ const Login = () => {
                         />
                         <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>
                            {form.formState.isSubmitting && <Loader2 className="mr-2 animate-spin" />}
-                           {form.formState.isSubmitting ? "Login..." : "Login"}
+                           {form.formState.isSubmitting ? "Giriş edilir..." : "Giriş"}
                         </Button>
                      </form>
                   </Form>
-                  <div className="mt-3 text-sm text-center">
-                     Don&apos;t have an account?{" "}
+                  <div className="mt-3 text-center text-sm">
+                     Hesabınız yoxdur?
                      <Link to="/register" className="underline">
-                        Sign up
+                        Qeydiyyatdan keçin
                      </Link>
                   </div>
                </CardContent>
