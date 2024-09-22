@@ -15,7 +15,7 @@ const FilterSelect = () => {
          </SelectTrigger>
          <SelectContent>
             <SelectItem value="azalan">Bahadan ucuza</SelectItem>
-            <SelectItem value="artan">Ucuzdan bahayar</SelectItem>
+            <SelectItem value="artan">Ucuzdan bahaya</SelectItem>
          </SelectContent>
       </Select>
    );
