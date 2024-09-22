@@ -18,7 +18,7 @@ const MobileNav = () => {
 
          <SheetContent className="flex flex-col items-center pt-8 space-y-6">
             <SheetHeader>
-               <SheetTitle className="text-xl font-semibold playfair-font">Young Artist Hub</SheetTitle>
+               <SheetTitle className="text-xl font-semibold playfair-font">Young Artists Hub</SheetTitle>
             </SheetHeader>
 
             <nav className="flex flex-col items-center space-y-4 text-lg font-medium">
