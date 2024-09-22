@@ -9,7 +9,10 @@ interface FormLabelProps {
 
 const FormLabel: React.FC<FormLabelProps> = ({ htmlFor, className, children }) => {
    return (
-      <label className={`w-[100px] text-[20px] font-[500] text-textBlack ${className}`} htmlFor={htmlFor}>
+      <label
+         className={`w-[100px] text-[17px] font-[500] text-textBlack sm:text-[20px] ${className}`}
+         htmlFor={htmlFor}
+      >
          {children}
       </label>
    );
