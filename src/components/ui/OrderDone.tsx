@@ -13,7 +13,10 @@ const OrderDone: React.FC = () => {
                stroke-linejoin="round"
             />
          </svg>
-         <h3 className="text-[25px] font-[700] text-textBlack sm:text-[36px]"> Sifarişiniz uğurla tamamlandı!</h3>
+         <h3 className="px-3 text-[20px] font-[700] text-textBlack sm:px-0 sm:text-[36px]">
+            {" "}
+            Sifarişiniz uğurla tamamlandı!
+         </h3>
       </div>
    );
 };
