@@ -1,3 +1,4 @@
+import AnimatedLayout from "@/components/shared/AnimatedLayout";
 import Order from "@/components/shared/Order";
 import FormGroup from "@/components/ui/form/FormGroup";
 import FormInput from "@/components/ui/form/FormInput";
@@ -28,7 +29,7 @@ const Confirm: React.FC = () => {
    };
 
    return (
-      <div className="container mt-[60px] gap-x-[40px] lg:flex xl:gap-x-[70px]">
+      <AnimatedLayout className="container mt-[60px] gap-x-[40px] lg:flex xl:gap-x-[70px]">
          {orderCompleted ? (
             <OrderDone />
          ) : (
@@ -159,7 +160,7 @@ const Confirm: React.FC = () => {
          <div className="mt-10 lg:mt-0 xl:min-w-[700px]">
             <Order variant="confirm" page="confirm_page" />
          </div>
-      </div>
+      </AnimatedLayout>
    );
 };
 
