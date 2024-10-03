@@ -20,6 +20,7 @@ const PageNotFound = lazy(() => import("@/pages/PageNotFound"));
 const FavoritePage = lazy(() => import("@/pages/root/FavoritePage"));
 const ProductDetailPage = lazy(() => import("@/pages/root/ProductDetailPage"));
 const Orders = lazy(() => import("@/pages/root/Orders"));
+const RolePage = lazy(() => import("@/pages/auth/Role"));
 const LoginPage = lazy(() => import("@/pages/auth/Login"));
 const RegisterPage = lazy(() => import("@/pages/auth/Register"));
 const AuthorDetail = lazy(() => import("@/pages/root/AuthorDetail"));
@@ -128,6 +129,15 @@ const router: Router = createBrowserRouter([
          </Suspense>
       ),
       children: [
+
+         {
+            path: "/role",
+            element: (
+               <Suspense fallback={<Loading />}>
+                  <RolePage />
+               </Suspense>
+            ),
+         },
          {
             path: "/login",
             element: (

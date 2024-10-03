@@ -59,7 +59,7 @@ const Navbar = () => {
 
                         <Link
                            className="border border-black p-[16px] text-black transition-all hover:bg-black hover:text-white"
-                           to="/login"
+                           to="/role"
                         >
                            Daxil ol
                         </Link>

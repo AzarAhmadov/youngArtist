@@ -38,7 +38,7 @@ const MobileNav = () => {
 
             <div className="flex space-x-4">
                <Button asChild variant="default" className="px-6 py-2">
-                  <Link to={"/login"}>Daxil ol</Link>
+                  <Link to={"/role"}>Daxil ol</Link>
                </Button>
                <Button asChild variant="outline" className="px-6 py-2">
                   <Link to={"/register"}>Qeydiyyat</Link>
