@@ -8,8 +8,13 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import {registerUser} from "../../services/authService"
+import Splash2 from "../../assets/image/splash2.jpg"
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+   const navigate = useNavigate();
+
    const form = useForm<RegisterSchemaType>({
       resolver: zodResolver(registerSchema),
       defaultValues: {
@@ -20,12 +25,16 @@ const Register = () => {
    });
 
    const onSubmit = async (values: RegisterSchemaType) => {
-      await new Promise((res) =>
-         setTimeout(() => {
-            res(console.log(values));
-         }, 1000),
-      );
+      try {
+         const userData = await registerUser(values);  
+         console.log("Registration successful", userData);
+         navigate("/login")
+
+      } catch (error) {
+         console.error("Registration failed", error);
+      }
    };
+   
    return (
       <AnimatedLayout>
          <div className="flex min-h-screen flex-col items-center justify-center space-y-8 md:flex-row md:gap-x-8 md:space-y-0">
@@ -145,7 +154,7 @@ const Register = () => {
             </div>
             <div className="h-[50vh] w-full md:h-screen md:w-1/2">
                <img
-                  src="https://wallpapers.com/images/hd/catand-birdcage-welcome-sign-f9lwmysj96tmhe58.jpg"
+                  src={Splash2}
                   alt=""
                   className="h-full w-full object-cover"
                />

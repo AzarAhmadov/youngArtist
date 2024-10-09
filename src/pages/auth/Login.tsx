@@ -9,8 +9,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Logo from "../../components/shared/Logo";
+import { loginUser } from "../../services/authService";
+import Splash1 from "../../assets/image/splash1.jpg"
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+   const navigate = useNavigate();
+
    const form = useForm<LoginSchemaType>({
       resolver: zodResolver(loginSchema),
       defaultValues: {
@@ -20,20 +25,24 @@ const Login = () => {
    });
 
    const onSubmit = async (values: LoginSchemaType) => {
-      await new Promise((res) =>
-         setTimeout(() => {
-            res(console.log(values));
-         }, 1000),
-      );
+      try {
+         const userData = await loginUser(values);
+         console.log("Login successful", userData);
+         navigate("/")
+
+      } catch (error) {
+         console.error("Login failed", error);
+      }
    };
+
    return (
       <AnimatedLayout>
-         <div className="flex flex-col md:flex-row min-h-screen items-center justify-center space-y-8 md:space-y-0 md:gap-x-8">
-            <div className="container flex w-full md:w-1/2 justify-center">
-            <div className="absolute left-0 top-0 ps-7 pt-4">
+         <div className="flex min-h-screen flex-col items-center justify-center space-y-8 md:flex-row md:gap-x-8 md:space-y-0">
+            <div className="container flex w-full justify-center md:w-1/2">
+               <div className="absolute left-0 top-0 ps-7 pt-4">
                   <Logo variant="header" />
                </div>
-               <Card className="w-full max-w-sm p-5">
+               <Card className="w-full max-w-sm p-5 pt-[140px] md:pt-[50px] sm:pt-5">
                   <CardHeader className="mb-8">
                      <CardTitle className="text-2xl">Daxil ol</CardTitle>
                   </CardHeader>
@@ -83,7 +92,7 @@ const Login = () => {
             </div>
             <div className="h-[50vh] w-full md:h-screen md:w-1/2">
                <img
-                  src="https://rozwijamypasje.pl/wp-content/uploads/2020/11/female-person-tie-a-bow-on-a-gift-box-needlework-2048x1367.jpg"
+                  src={Splash1}
                   alt=""
                   className="h-full w-full object-cover"
                />

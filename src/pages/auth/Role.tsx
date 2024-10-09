@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import AnimatedLayout from "@/components/shared/AnimatedLayout";
 import Logo from "../../components/shared/Logo";
+import Splash1 from "../../assets/image/splash1.jpg"
 
 const Role = () => {
    const [selectedRole, setSelectedRole] = useState<string | null>(null);
@@ -23,7 +24,7 @@ const Role = () => {
                   <Logo variant="header" />
                </div>
 
-               <Card className="w-full max-w-sm">
+               <Card className="w-full max-w-sm pt-[140px] md:pt-[50px]">
                   <CardHeader className="mb-6">
                      <CardDescription className="mb-6 text-base font-medium text-gray-900">
                         Gəlin Başlayaq!
@@ -81,7 +82,7 @@ const Role = () => {
             </div>
             <div className="h-[50vh] w-full md:h-screen md:w-1/2">
                <img
-                  src="https://rozwijamypasje.pl/wp-content/uploads/2020/11/female-person-tie-a-bow-on-a-gift-box-needlework-2048x1367.jpg"
+                  src={Splash1}
                   alt=""
                   className="h-full w-full object-cover"
                />
